@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: spring-demo
+  profiles:
+    active: mysql  # 默认使用MySQL，可通过环境变量SPRING_PROFILES_ACTIVE切换
+
+# MyBatis-Plus配置
+mybatis-plus:
+  configuration:
+    # 驼峰命名转换：数据库字段 user_name -> Java属性 userName
+    map-underscore-to-camel-case: true
+    # 使用SLF4J记录SQL日志
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    db-config:
+      # 主键自增
+      id-type: auto
+      # 逻辑删除配置
+      logic-delete-field: deleted  # 逻辑删除字段名
+      logic-delete-value: 1        # 删除后的值
+      logic-not-delete-value: 0    # 未删除的值
+  # Mapper XML文件位置（如果需要自定义SQL）
+  mapper-locations: classpath:mapper/*.xml
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.example.springdemo: DEBUG      # 项目日志级别
+    com.baomidou.mybatisplus: DEBUG    # MyBatis-Plus日志级别（显示SQL）
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n'
+
+# 服务器配置
+server:
+  port: 8080
+  servlet:
+    context-path: /

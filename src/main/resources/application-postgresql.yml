@@ -1,0 +1,7 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    # PostgreSQL数据库连接配置
+    url: jdbc:postgresql://localhost:5432/spring_demo
+    username: postgres
+    password: postgres  # 请根据实际情况修改密码
