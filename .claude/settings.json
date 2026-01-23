@@ -1,0 +1,10 @@
+{
+  "allowedTools": [
+    "mcp__mysql__mysql_list_tables",
+    "mcp__mysql__mysql_describe_table",
+    "mcp__mysql__mysql_select_data"
+  ],
+  "mcp": {
+    "autoApprove": ["mysql"]
+  }
+}
