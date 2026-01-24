@@ -22,7 +22,7 @@ buildNumber.properties
 bin/
 
 # Claude Code
-.claude/
+# .claude/
 
 # macOS
 .DS_Store
